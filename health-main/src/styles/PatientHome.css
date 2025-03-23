@@ -1,0 +1,480 @@
+:root {
+    --primary-color: #3498db; /* Vibrant blue */
+    --secondary-color: #2c3e50; /* Dark blue-gray */
+    --accent-color: #e74c3c; /* Warm red for emergency/action items */
+    --light-accent: #f39c12; /* Golden yellow for highlights */
+    --success-color: #2ecc71; /* Green for success messages */
+    --light-bg: #f5f7fa; /* Very light background */
+    --card-bg: #ffffff; /* White for cards */
+    --text-color: #34495e; /* Dark text */
+    --text-light: #7f8c8d; /* Light text */
+    --border-color: #ecf0f1; /* Very light border */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --shadow-strong: 0 10px 15px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+  }
+  
+  body {
+    font-family: 'Poppins', 'Roboto', sans-serif; /* Modern, clean font */
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  .patient-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0f7fa 0%, #f5f5f5 100%); /* Subtle gradient */
+  }
+  
+  /* Header styling */
+  .patient-header {
+    background: linear-gradient(90deg, var(--primary-color), #2980b9);
+    color: white;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow-strong);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .patient-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .profile-icon {
+    cursor: pointer;
+    padding: 0.8rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .profile-icon:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .profile-details {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-strong);
+    z-index: 1000;
+    text-align: left;
+    color: var(--text-color);
+    width: 250px;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .profile-details h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+  }
+  
+  .profile-details button {
+    background-color: var(--primary-color);
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .profile-details button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Main content area */
+  .patient-main {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  section {
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+    /* height: 100%; REMOVE this */
+}
+
+
+  
+  section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+  }
+  
+  h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+  }
+  
+  /* Form elements styling */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input,
+  textarea {
+    padding: 14px;
+    margin-bottom: 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Section specific styling */
+  .find-doctor-section, .booking-section, .emergency-section,
+.health-tips-section, .contact-section {
+    grid-column: span 2;
+}
+  
+  .find-doctor-section form, .booking-section form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .emergency-section button {
+    background-color: var(--accent-color);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    width: 250px;
+  }
+  
+  .emergency-section button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Health tips section */
+  .health-tips-section {
+    grid-column: span 2;
+  }
+  
+  .health-tip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(52, 152, 219, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+  }
+  
+  .health-tip-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+  }
+  
+  .health-tip-image:hover {
+    transform: scale(1.02);
+  }
+  
+  .health-tip-text {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+  
+  /* Doctor cards styling */
+  .recommended-doctors-section {
+    grid-column: 1 / -1;
+  }
+  
+  .doctors-scroll-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0.5rem 0;
+  }
+  
+  .doctors-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--border-color);
+    gap: 1.5rem;
+    scroll-behavior: smooth;
+  }
+  
+  .doctors-container::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .doctors-container::-webkit-scrollbar-track {
+    background-color: var(--border-color);
+    border-radius: 10px;
+  }
+  
+  .doctors-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+  }
+  
+  .doctor-card {
+    flex: 0 0 auto;
+    width: 250px;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    background-color: white;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border-top: 4px solid transparent;
+  }
+  
+  .doctor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-strong);
+    border-top: 4px solid var(--primary-color);
+  }
+  
+  .doctor-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 3px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .doctor-card:hover img {
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+  }
+  
+  .doctor-card h3 {
+    margin: 0.5rem 0;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .doctor-card p {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+  }
+  
+  .scroll-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .scroll-button.left {
+    left: 0.5rem;
+  }
+  
+  .scroll-button.right {
+    right: 0.5rem;
+  }
+  
+  /* Contact section */
+  .contact-section {
+    grid-column: span 2;
+  }
+  
+  .contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-section textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  /* Footer styling */
+  .patient-footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .find-doctor-section, .booking-section, .emergency-section,
+    .health-tips-section, .contact-section {
+      grid-column: span 1;
+    }
+    
+    .patient-main {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem; /* Increase gap */
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+  }
+  
+  @media (max-width: 768px) {
+    .patient-main {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+      gap: 1rem;
+    }
+    
+    section {
+      padding: 1.5rem;
+    }
+    
+    .doctor-card {
+      width: 200px;
+    }
+    
+    .health-tip-image {
+      max-width: 100%;
+    }
+    
+    .scroll-button {
+      width: 30px;
+      height: 30px;
+    }
+    
+    .patient-header {
+      padding: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .doctor-card {
+      width: 180px;
+    }
+    
+    h2 {
+      font-size: 1.2rem;
+    }
+    
+    .patient-header h1 {
+      font-size: 1.4rem;
+    }
+    
+    button {
+      padding: 12px 16px;
+    }
+  }
+
+  .suggestions-list {
+    background: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .suggestion-item:hover {
+    background: #f0f0f0;
+  }
+  
+
+  .highlight-section {
+    box-shadow: 0 0 20px 5px rgba(255, 165, 0, 0.6);
+    transition: box-shadow 0.5s ease-in-out;
+  }
+  
