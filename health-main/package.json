@@ -29,7 +29,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://innomaticsprojectfinal-backend-hh01r7xx2-deepikat11s-projects.vercel.app/",
+  "proxy": "https://innomaticsprojectfinal.onrender.com",
   "eslintConfig": {
     "extends": [
       "react-app",
