@@ -14,7 +14,7 @@ app.use(cors({
 
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://thotadeepika05:deeps@cluster0.yzfiv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://thotadeepika05:deeps@cluster0.yzfiv.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log('MongoDB connected'))
