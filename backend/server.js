@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
+app.use(cors({
+  origin: 'https://innomaticsprojectfinal-frontend-nahf5112d-deepikat11s-projects.vercel.app',
+  credentials: true
+}));
 const app = express();
 app.use(cors());
 app.use(express.json());
