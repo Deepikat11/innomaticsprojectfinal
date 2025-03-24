@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/User'); // Assuming User model is created in models/User.js
 
 // POST /api/v1/user/register
-router.post('/register', async (req, res) => {
+exports.router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
   
   try {
@@ -21,11 +21,11 @@ router.post('/register', async (req, res) => {
   }
 });
 
-module.exports = router;
+
 
 
 // Login Route
-router.post('/login', async (req, res) => {
+exports.router.post('/login', async (req, res) => {
     const { email, password } = req.body;
   
     try {
@@ -46,3 +46,4 @@ router.post('/login', async (req, res) => {
     }
   });
   
+
