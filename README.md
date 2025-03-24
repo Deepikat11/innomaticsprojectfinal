@@ -1,37 +1,36 @@
-Innomatics Internship Project 4 - Healthcare Booking System (MERN)
-This is a full-stack Healthcare Booking System built as part of my Innomatics Internship Project 4. The system enables patients to book appointments with doctors, doctors to manage their schedules, and admins to oversee users and appointments.
+🏥 Innomatics Internship Project 4 - Healthcare Booking System (MERN)
+A full-stack Healthcare Booking System built as part of my Innomatics Internship. This system enables:
 
-Tech Stack:
-MongoDB (Database)
+🩺 Patients to book appointments with doctors
 
-Express.js (Backend API)
+👨‍⚕️ Doctors to manage their schedules
 
-React.js (Frontend UI)
-
-Node.js (Server)
+🛠️ Admins to oversee users and appointments
 
 
+⚙️ Tech Stack
+MongoDB – Database
+Express.js – Backend API
+React.js – Frontend UI
+Node.js – Server
 
-🚧 Note: This project is still under development.
 
-🔗 https://frontend-lteawwetu-deepikat11s-projects.vercel.app/
+🔗 Live Demo: https://frontend-lteawwetu-deepikat11s-projects.vercel.app/
 
-
-🚀 Setup Instructions:
-Clone the repository:
-
+🚀 Setup Instructions
+1. Clone the repository:
 bash
 Copy
 Edit
 git clone https://github.com/Deepikat11/innomaticsprojectfinal.git
-Navigate to frontend and backend folders separately:
-
+2. Setup frontend:
 bash
 Copy
 Edit
 cd frontend
 npm install
 npm start
+3. Setup backend:
 bash
 Copy
 Edit
