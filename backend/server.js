@@ -19,9 +19,9 @@ mongoose.connect('mongodb+srv://thotadeepika05:deeps@cluster0.yzfiv.mongodb.net/
   .catch(err => console.log(err));
 
 // Dummy route for testing
-app.get('/', (req, res) => {
-  res.send('API is working 🚀');
-});
+// app.get('/', (req, res) => {
+//   res.send('API is working 🚀');
+// });
 
 // Example user route
 const userRoutes = require('./routes/userRoutes');
