@@ -47,7 +47,7 @@ const DoctorRegister = () => {
       // Use a more verbose approach for debugging
       console.log('Making API request to register endpoint');
       
-      const response = await axios.post('https://innomaticsprojectfinal.onrender.com/api/v1/user/register', {
+      const response = await axios.post('https://innomaticsprojectfinal.onrender.com//api/v1/user/register', {
         name: formData.name,
         email: formData.email,
         password: formData.password
