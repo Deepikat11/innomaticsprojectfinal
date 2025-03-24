@@ -46,7 +46,7 @@ const PatientRegister = () => {
       // Use a more verbose approach for debugging
       console.log('Making API request to register endpoint');
       
-      const response = await axios.post('http://localhost:5000/api/v1/user/register', {
+      const response = await axios.post('https://innomaticsprojectfinal-backend-hh01r7xx2-deepikat11s-projects.vercel.app/api/v1/user/register', {
         name: formData.name,
         email: formData.email,
         password: formData.password
