@@ -28,6 +28,6 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/v1/user', userRoutes);
 
 const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
 module.exports = app;
