@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/User'); // Assuming User model is created in models/User.js
 
 // POST /api/v1/user/register
-exports.router.post('/register', async (req, res) => {
+router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
   
   try {
@@ -15,7 +15,7 @@ exports.router.post('/register', async (req, res) => {
     const newUser = new User({ name, email, password });
     await newUser.save();
 
-    res.json({ success: true, message: 'User registered successfully' });
+    res.status(200).json({ success: true, message: 'User registered successfully' });
   } catch (err) {
     res.status(500).json({ success: false, message: 'Server error', error: err.message });
   }
@@ -25,7 +25,7 @@ exports.router.post('/register', async (req, res) => {
 
 
 // Login Route
-exports.router.post('/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     const { email, password } = req.body;
   
     try {
@@ -39,11 +39,11 @@ exports.router.post('/login', async (req, res) => {
         return res.status(401).json({ success: false, message: 'Invalid password' });
       }
   
-      res.json({ success: true, message: 'Login successful', userId: user._id, user });
+      res.status(200).json({ success: true, message: 'Login successful', userId: user._id, user });
     } catch (error) {
       console.error(error);
       res.status(500).json({ success: false, message: 'Server Error' });
     }
   });
   
-
+module.exports = router;
